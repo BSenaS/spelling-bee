@@ -11,22 +11,27 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="flex flex-row items-center justify-center w-full bg-[#635948] h-16 gap-4">
-      <Link href={"/"}>
+    <div className="flex flex-row items-center justify-between w-full bg-[#635948] h-16 gap-4">
+      <Link href={"/"} className="ml-4">
         <BeeSvg width={30} />
       </Link>
-      <GrTrophy size={"30px"} className="cursor-pointer text-[#FAFAFA]" />
+      <div className="flex gap-4 items-center mr-4">
+        <GrTrophy size={"30px"} className="cursor-pointer text-[#FAFAFA]" />
 
-      <FaRankingStar size={"35px"} className="cursor-pointer text-[#FAFAFA]" />
+        <FaRankingStar
+          size={"35px"}
+          className="cursor-pointer text-[#FAFAFA]"
+        />
 
-      <IoSettingsOutline
-        size={"35px"}
-        className="cursor-pointer text-[#FAFAFA]"
-      />
-      <FaRegQuestionCircle
-        size={"34px"}
-        className="cursor-pointer text-[#FAFAFA]"
-      />
+        <IoSettingsOutline
+          size={"35px"}
+          className="cursor-pointer text-[#FAFAFA]"
+        />
+        <FaRegQuestionCircle
+          size={"34px"}
+          className="cursor-pointer text-[#FAFAFA]"
+        />
+      </div>
     </div>
   );
 };
