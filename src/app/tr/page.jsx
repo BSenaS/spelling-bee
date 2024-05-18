@@ -1,7 +1,7 @@
 import BeeSvg from "@/utils/BeeSvg";
 import React from "react";
 
-const EnPage = () => {
+const TrPage = () => {
   return (
     <div>
       <BeeSvg width={70} className="mx-auto" />
@@ -9,4 +9,4 @@ const EnPage = () => {
   );
 };
 
-export default EnPage;
+export default TrPage;

@@ -1,12 +1,15 @@
-import BeeSvg from "@/utils/BeeSvg";
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/navbar/Header";
 import React from "react";
 
-const TrPage = () => {
+const EnPage = () => {
   return (
     <div>
-      <BeeSvg width={70} className="mx-auto" />
+      <Header />
+      <div className="h-[700px] bg-[#13141C]">Content</div>
+      <Footer />
     </div>
   );
 };
 
-export default TrPage;
+export default EnPage;

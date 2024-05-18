@@ -1,8 +1,8 @@
 import React from "react";
 
-const BeeSvg = ({ width, animationStr }) => {
+const BeeSvg = ({ width, animationStr, auto }) => {
   return (
-    <div className="mx-auto">
+    <div className={`${auto}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 426.3 509.9"
