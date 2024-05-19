@@ -28,3 +28,53 @@
   justify-content: center;
   align-items: center;
 }
+
+.hive1 {
+  top: 0;
+  left: 30%;
+}
+
+.hive2 {
+  top: -15%;
+  left: 4%;
+}
+
+.hive3 {
+  top: -14%;
+  left: 4%;
+}
+
+.hive4 {
+  top: -59%;
+  left: 30%;
+  background-color: #b58a13; /* !bg-[#B58A13] */
+}
+
+.hive4:hover {
+  background-color: #eecf21;
+}
+
+.hive5 {
+  top: -58%;
+  left: 30%;
+}
+
+.hive6 {
+  top: -134%;
+  left: 56%;
+}
+
+.hive7 {
+  top: -133%;
+  left: 56%;
+}
+
+.hive1:hover,
+.hive2:hover,
+.hive3:hover,
+.hive5:hover,
+.hive6:hover,
+.hive7:hover {
+  background-color: #888582;
+  transition: background-color 0.3s ease;
+}

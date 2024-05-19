@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
-
+import { data } from "@/data/data";
 export const GameContext = createContext();
 
 const GameContextProvider = ({ children }) => {
@@ -24,7 +24,11 @@ const GameContextProvider = ({ children }) => {
   const [seconds, setSeconds] = useState(60);
   const [startGame, setStartGame] = useState(false);
   //Text input
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
+  //Game Data
+  const [gameData, setGameData] = useState(data);
+  const [count, setCount] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState([]);
 
   return (
     <GameContext.Provider
@@ -41,6 +45,12 @@ const GameContextProvider = ({ children }) => {
         setStartGame,
         input,
         setInput,
+        gameData,
+        setGameData,
+        count,
+        setCount,
+        correctAnswers,
+        setCorrectAnswers,
       }}
     >
       <div>{children}</div>

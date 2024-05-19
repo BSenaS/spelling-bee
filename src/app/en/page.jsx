@@ -13,7 +13,7 @@ const EnPage = () => {
       <ProgressBar />
       <FoundWordList />
       <Timer />
-      <GameElements />
+      <GameElements params={"en"} />
       <Footer />
     </div>
   );
