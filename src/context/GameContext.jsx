@@ -20,6 +20,9 @@ const GameContextProvider = ({ children }) => {
   //ProgressBar states.
   const [minValue, setMinValue] = useState(105);
   const [maxValue, setMaxValue] = useState(250);
+  //Timer state.
+  const [seconds, setSeconds] = useState(60);
+  const [startGame, setStartGame] = useState(false);
 
   return (
     <GameContext.Provider
@@ -30,6 +33,10 @@ const GameContextProvider = ({ children }) => {
         setMaxValue,
         foundWords,
         setFoundWords,
+        seconds,
+        setSeconds,
+        startGame,
+        setStartGame,
       }}
     >
       <div>{children}</div>
