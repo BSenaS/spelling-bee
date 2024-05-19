@@ -1,4 +1,5 @@
 import FoundWordList from "@/components/FoundWordList";
+import GameElements from "@/components/GameElements";
 import ProgressBar from "@/components/ProgressBar";
 import Timer from "@/components/Timer";
 import Footer from "@/components/footer/Footer";
@@ -12,7 +13,7 @@ const EnPage = () => {
       <ProgressBar />
       <FoundWordList />
       <Timer />
-      <div className="h-[700px] bg-[#13141C] text-[#FAFAFAFA]">TEST</div>
+      <GameElements />
       <Footer />
     </div>
   );

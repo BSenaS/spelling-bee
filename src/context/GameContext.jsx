@@ -23,6 +23,8 @@ const GameContextProvider = ({ children }) => {
   //Timer state.
   const [seconds, setSeconds] = useState(60);
   const [startGame, setStartGame] = useState(false);
+  //Text input
+  const [input, setInput] = useState();
 
   return (
     <GameContext.Provider
@@ -37,6 +39,8 @@ const GameContextProvider = ({ children }) => {
         setSeconds,
         startGame,
         setStartGame,
+        input,
+        setInput,
       }}
     >
       <div>{children}</div>

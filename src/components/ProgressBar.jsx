@@ -14,9 +14,9 @@ const ProgressBar = () => {
       <div className="text-[#FAFAFA] flex flex-col mx-auto py-2">
         <span>Rank</span>
       </div>
-      <div class="w-11/12 bg-[#3F435D] rounded-full h-5 dark:bg-gray-700 mx-auto">
+      <div className="w-11/12 bg-[#3F435D] rounded-full h-5 dark:bg-gray-700 mx-auto">
         <div
-          class="bg-[#B58A13] h-5 rounded-full"
+          className="bg-[#B58A13] h-5 rounded-full"
           style={{ width: `${progressWidth}%` }}
         ></div>
       </div>
