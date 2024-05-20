@@ -6,7 +6,7 @@ import React from "react";
 const TrPage = () => {
   return (
     <div className="flex flex-col bg-[#13141C] gap-4 ">
-      <Header />
+      <Header params={"tr"} />
       <GameElements params={"tr"} />
       <Footer params={"tr"} />
     </div>

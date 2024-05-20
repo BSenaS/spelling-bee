@@ -1,10 +1,11 @@
 "use client";
 import { GameContext } from "@/context/GameContext";
 import Hive from "@/utils/Hive";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
 import FoundWordList from "./FoundWordList";
 import Timer from "./Timer";
+import { GrPowerReset } from "react-icons/gr";
 
 const GameElements = ({ params }) => {
   const {
@@ -32,7 +33,7 @@ const GameElements = ({ params }) => {
 
   //Input
   const handleInput = (e) => {
-    setInput(e.target.value);
+    setInput(e.target.value.toUpperCase());
   };
 
   const handleDeleteInput = () => {
@@ -100,9 +101,10 @@ const GameElements = ({ params }) => {
     letter: letter,
   }));
 
+  const [puan, setPuan] = useState(0);
+
   useEffect(() => {
     setMaxValue(currentAnswers.totalPoint);
-    console.log();
   }, []);
 
   useEffect(() => {
@@ -113,7 +115,7 @@ const GameElements = ({ params }) => {
     <div className="flex flex-col h-screen w-11/12 text-[#FAFAFA] text-center gap-4 mx-auto max-w-[700px]">
       <ProgressBar params={params} />
       <FoundWordList params={params} />
-      <Timer />
+      <Timer params={params} />
       <form onSubmit={handleSubmitBtn}>
         <div>
           <input
@@ -135,8 +137,8 @@ const GameElements = ({ params }) => {
           <Hive key={index} hiveName={hive.hiveName} letter={hive.letter} />
         ))}
       </div>
-      <div className="flex flex-col gap-2 items-center py-4">
-        <div className="flex flex-row gap-4">
+      <div className="flex flex-col gap-4 items-center py-4">
+        <div className="flex flex-row gap-6">
           <button
             className="bg-[#E6E6E6] text-[#13141C] font-semibold border-none rounded-3xl w-[90px] h-[40px]"
             onClick={handleDeleteInput}
@@ -144,10 +146,10 @@ const GameElements = ({ params }) => {
             {d.deleteBtn}
           </button>
           <button
-            className="bg-[#E6E6E6] text-[#13141C] font-semibold border-none rounded-3xl w-[90px] h-[40px]"
+            className="bg-[#E6E6E6] text-[#13141C] font-semibold border-none rounded-3xl px-4 py-2"
             onClick={handleReset}
           >
-            Reset
+            <GrPowerReset />
           </button>
           <button
             className="bg-[#E6E6E6] text-[#13141C] font-semibold border-none rounded-3xl w-[90px] h-[40px]"

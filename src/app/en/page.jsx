@@ -6,7 +6,7 @@ import React from "react";
 const EnPage = () => {
   return (
     <div className="flex flex-col bg-[#13141C] gap-4 ">
-      <Header />
+      <Header params={"en"} />
       <GameElements params={"en"} />
       <Footer params={"en"} />
     </div>
