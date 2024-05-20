@@ -1,0 +1,38 @@
+export const constants = {
+  en: {
+    foundedWords: "Found Words",
+    timer: "Time Remaining",
+    score: "Score",
+    footerTitle: "SpellBee: Spelling Bee Game",
+    footerInfo:
+      "Game rules: Create the maximum number of words using 7 letters from the hive. Words must contain at least 4 letters and include the center letter. Four-letter words are worth 1 point each. Longer words earn 1 point per letter. How many words can you make with 7 letters?",
+    answer: "ANSWER",
+    fourLetter: "Less than 4 letter",
+    fifteenLetter: "More than 15 letter",
+    letterExist: "Already exist",
+    middleLetterExist: "Missing middle letter",
+    correctAnswer: "Correct!",
+    falseAnswer: "Word does not exist",
+    deleteBtn: "Delete",
+    submitBtn: "Submit",
+    startBtn: "Start!",
+  },
+  tr: {
+    foundedWords: "Bulunan Kelimeler",
+    timer: "Kalan Süre",
+    score: "Puan",
+    footerTitle: "SpellBee: Kelime Oyunu",
+    footerInfo:
+      "Oyun kuralları: Kovanın içindeki 7 harfi kullanarak mümkün olduğunca fazla kelime oluşturun. Kelimeler en az 4 harf içermeli ve merkez harfi içermelidir. Dört harfli kelimeler her biri 1 puan değerindedir. Daha uzun kelimeler harf başına 1 puan kazandırır. 7 harfle kaç kelime oluşturabilirsiniz?",
+    answer: "CEVAP",
+    fourLetter: "4 harften az",
+    fifteenLetter: "15 harften fazla",
+    letterExist: "Zaten mevcut",
+    middleLetterExist: "Orta harf eksik",
+    correctAnswer: "Doğru!",
+    falseAnswer: "Kelime mevcut değil",
+    deleteBtn: "Sil",
+    submitBtn: "Gönder",
+    startBtn: "Başlat!",
+  },
+};

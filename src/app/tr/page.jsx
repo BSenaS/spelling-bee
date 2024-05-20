@@ -1,10 +1,14 @@
-import BeeSvg from "@/utils/BeeSvg";
+import GameElements from "@/components/GameElements";
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/navbar/Header";
 import React from "react";
 
 const TrPage = () => {
   return (
-    <div>
-      <BeeSvg width={70} className="mx-auto" />
+    <div className="flex flex-col bg-[#13141C] gap-4 ">
+      <Header />
+      <GameElements params={"tr"} />
+      <Footer params={"tr"} />
     </div>
   );
 };

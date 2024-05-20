@@ -2,6 +2,9 @@
 import { GameContext } from "@/context/GameContext";
 import Hive from "@/utils/Hive";
 import React, { useContext, useEffect } from "react";
+import ProgressBar from "./ProgressBar";
+import FoundWordList from "./FoundWordList";
+import Timer from "./Timer";
 
 const GameElements = ({ params }) => {
   const {
@@ -18,12 +21,14 @@ const GameElements = ({ params }) => {
     setMaxValue,
     foundWords,
     setMinValue,
+    constantsDic,
   } = useContext(GameContext);
 
   //data.en
   const getGameData = gameData[params];
   const letters = getGameData[count].availableLetters.toUpperCase();
   const currentAnswers = getGameData[count];
+  const d = constantsDic[params];
 
   //Input
   const handleInput = (e) => {
@@ -72,7 +77,7 @@ const GameElements = ({ params }) => {
     } else if (wordExist) {
       console.log("Bu kelime daha önce girildi");
       setInput("");
-    } else if (middleLetterExist) {
+    } else if (!middleLetterExist) {
       console.log("Kelime orta harfi içermiyor.");
       setInput("");
     } else if (foundWord) {
@@ -95,10 +100,9 @@ const GameElements = ({ params }) => {
     letter: letter,
   }));
 
-  //Oyun başladığın da minValue, maxValue değer ataması yapılsın
-  //4ahrfli kelime -> 1pts , ekstra her harf 1 puan.
   useEffect(() => {
     setMaxValue(currentAnswers.totalPoint);
+    console.log();
   }, []);
 
   useEffect(() => {
@@ -106,13 +110,16 @@ const GameElements = ({ params }) => {
   }, [count]);
 
   return (
-    <div className="flex flex-col h-screen w-11/12 text-[#FAFAFA] text-center gap-4 mx-auto">
+    <div className="flex flex-col h-screen w-11/12 text-[#FAFAFA] text-center gap-4 mx-auto max-w-[700px]">
+      <ProgressBar params={params} />
+      <FoundWordList params={params} />
+      <Timer />
       <form onSubmit={handleSubmitBtn}>
         <div>
           <input
             type="text"
             onChange={handleInput}
-            placeholder="ANSWER"
+            placeholder={d.answer}
             className="text-[#FAFAFA] text-center py-4 font-bold bg-[#13141C] border border-[#243c5a] rounded-md"
             value={input}
             onSubmit={handleSubmitBtn}
@@ -134,7 +141,7 @@ const GameElements = ({ params }) => {
             className="bg-[#E6E6E6] text-[#13141C] font-semibold border-none rounded-3xl w-[90px] h-[40px]"
             onClick={handleDeleteInput}
           >
-            Delete
+            {d.deleteBtn}
           </button>
           <button
             className="bg-[#E6E6E6] text-[#13141C] font-semibold border-none rounded-3xl w-[90px] h-[40px]"
@@ -147,7 +154,7 @@ const GameElements = ({ params }) => {
             onClick={handleSubmitBtn}
             disabled={!startGame}
           >
-            Enter
+            {d.submitBtn}
           </button>
         </div>
         <div>
@@ -155,7 +162,7 @@ const GameElements = ({ params }) => {
             className="bg-[#B58A13] text-[#13141C] font-semibold border-none rounded-3xl w-[90px] h-[40px]"
             onClick={handleStart}
           >
-            Start!
+            {d.startBtn}
           </button>
         </div>
       </div>

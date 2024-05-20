@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { data } from "@/data/data";
 export const GameContext = createContext();
+import { constants } from "@/dictionaries/dictionary";
 
 const GameContextProvider = ({ children }) => {
   //Found Words
@@ -19,6 +20,7 @@ const GameContextProvider = ({ children }) => {
   const [gameData, setGameData] = useState(data);
   const [count, setCount] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState([]);
+  const [constantsDic, setConstantsDic] = useState(constants);
 
   return (
     <GameContext.Provider
@@ -44,6 +46,8 @@ const GameContextProvider = ({ children }) => {
         startGame,
         setStartGame,
         setSeconds,
+        constantsDic,
+        setConstantsDic,
       }}
     >
       <div>{children}</div>

@@ -1,12 +1,21 @@
 "use client";
 import { GameContext } from "@/context/GameContext";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import constants from "@/dictionaries/dictionary";
+import { usePathname } from "next/navigation";
 
-const FoundWordList = () => {
-  const { foundWords, setFoundWords } = useContext(GameContext);
-
+const FoundWordList = ({ params }) => {
+  const { foundWords, setFoundWords, constantsDic } = useContext(GameContext);
   const [isOpen, setIsOpen] = useState(false);
+  const d = constantsDic[params];
+
   const toggleDropdown = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    // console.log("Found word list params", params);
+    // console.log(d.foundedWords);
+    console.log(constantsDic[params].foundedWords);
+  }, []);
 
   return (
     <div className="w-11/12 mx-auto my-4">
@@ -14,10 +23,11 @@ const FoundWordList = () => {
         className="text-[#FAFAFA] border-2 border-solid border-[#3F435D] py-2 px-4 flex items-center justify-between cursor-pointer"
         onClick={toggleDropdown}
       >
-        You have found {foundWords.length} words
-        <span className="text-[#B58A13]">
-          {isOpen ? "expand_less" : "expand_more"}
+        <span>
+          {d.foundedWords}
+          {":"} {foundWords.length}
         </span>
+        <span className="text-[#B58A13]">{isOpen ? ">" : ">"}</span>
       </div>
       {isOpen && (
         <div className="flex flex-row flex-wrap bg-[#1E1E2C] py-2 absolute w-11/12 z-50 mt-1 rounded-md shadow-lg overflow-hidden">

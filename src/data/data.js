@@ -273,4 +273,28 @@ export const data = {
       availableLetters: "cgionuv",
     },
   ],
+  tr: [
+    {
+      answers: [
+        "arma",
+        "mart",
+        "namaz",
+        "ramazan",
+        "atar",
+        "asma",
+        "atma",
+        "anma",
+        "aram",
+        "tara",
+        "sanat",
+        "arama",
+        "anam",
+        "asar",
+        "astar",
+      ],
+      totalPoint: 22,
+      middleLetter: "a",
+      availableLetters: "stramne",
+    },
+  ],
 };
