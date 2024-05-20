@@ -19,11 +19,13 @@ const Header = ({ params }) => {
           <LanguageSwitcher params={params} />
         </div>
         <div className="flex gap-4 items-center mr-4">
-          <FaRegQuestionCircle
-            size={"34px"}
-            className="cursor-pointer text-[#FAFAFA] hover:text-[#B58A13]"
-            onClick={() => setPopUp(true)}
-          />
+          <div className="flex flex-row items-center justify-center">
+            <FaRegQuestionCircle
+              size={"34px"}
+              className="cursor-pointer text-[#FAFAFA] hover:text-[#b58a13]"
+              onClick={() => setPopUp(true)}
+            />
+          </div>
 
           {popUp && <Hint setPopUp={setPopUp} params={params} />}
         </div>

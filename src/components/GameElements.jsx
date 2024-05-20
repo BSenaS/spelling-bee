@@ -116,8 +116,17 @@ const GameElements = ({ params }) => {
     setMaxValue(currentAnswers.totalPoint);
   }, [count]);
 
+  useEffect(() => {
+    setInput("");
+    setSeconds(60);
+    setStartGame(false);
+    setFoundWords([]);
+    setMinValue(0);
+    setErrorMsg("");
+  }, [params]);
+
   return (
-    <div className="flex flex-col h-screen w-11/12 text-[#FAFAFA] text-center gap-4 mx-auto max-w-[700px]">
+    <div className="flex flex-col w-11/12 text-[#FAFAFA] text-center gap-4 mx-auto max-w-[700px] ">
       <ProgressBar params={params} />
       <FoundWordList params={params} />
       <Timer params={params} />
@@ -136,7 +145,7 @@ const GameElements = ({ params }) => {
             onSubmit={handleSubmitBtn}
           />
         </div>
-        <button type="submit" style={{ display: "none" }}>
+        <button type="submit" style={{ display: "none" }} disabled={!startGame}>
           On Submit Enter
         </button>
       </form>
