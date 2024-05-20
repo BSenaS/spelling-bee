@@ -278,8 +278,6 @@ export const data = {
       answers: [
         "arma",
         "mart",
-        "namaz",
-        "ramazan",
         "atar",
         "asma",
         "atma",
@@ -292,7 +290,7 @@ export const data = {
         "asar",
         "astar",
       ],
-      totalPoint: 22,
+      totalPoint: 16,
       middleLetter: "a",
       availableLetters: "stramne",
     },

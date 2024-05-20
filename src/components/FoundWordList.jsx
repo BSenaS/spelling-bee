@@ -1,8 +1,7 @@
 "use client";
 import { GameContext } from "@/context/GameContext";
 import React, { useContext, useEffect, useState } from "react";
-import constants from "@/dictionaries/dictionary";
-import { usePathname } from "next/navigation";
+import { IoIosArrowDropdown } from "react-icons/io";
 
 const FoundWordList = ({ params }) => {
   const { foundWords, setFoundWords, constantsDic } = useContext(GameContext);
@@ -27,7 +26,9 @@ const FoundWordList = ({ params }) => {
           {d.foundedWords}
           {":"} {foundWords.length}
         </span>
-        <span className="text-[#B58A13]">{isOpen ? ">" : ">"}</span>
+        <span className="text-[#3F435D]">
+          <IoIosArrowDropdown size={25} />
+        </span>
       </div>
       {isOpen && (
         <div className="flex flex-row flex-wrap bg-[#1E1E2C] py-2 absolute z-50 mt-1 rounded-md shadow-lg overflow-hidden w-10/12 md:max-w-[600px] lg:max-w-[640px]">

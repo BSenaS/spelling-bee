@@ -16,9 +16,9 @@ const Header = ({ params }) => {
           <Link href={"/"} className="ml-4">
             <BeeSvg width={30} />
           </Link>
-          <LanguageSwitcher params={params} />
         </div>
         <div className="flex gap-4 items-center mr-4">
+          <LanguageSwitcher params={params} />
           <div className="flex flex-row items-center justify-center">
             <FaRegQuestionCircle
               size={"34px"}
