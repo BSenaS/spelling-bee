@@ -1,7 +1,7 @@
 "use client";
 import { GameContext } from "@/context/GameContext";
 import BeeSvg from "@/utils/BeeSvg";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 const ProgressBar = () => {
   const { minValue, setMinValue, maxValue, setMaxValue } =
@@ -12,7 +12,7 @@ const ProgressBar = () => {
   return (
     <div className="flex flex-col">
       <div className="text-[#FAFAFA] flex flex-col mx-auto py-2">
-        <span>Rank</span>
+        <span>{`${minValue}/${maxValue}`}</span>
       </div>
       <div className="w-11/12 bg-[#3F435D] rounded-full h-5 dark:bg-gray-700 mx-auto">
         <div

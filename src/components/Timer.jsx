@@ -4,7 +4,8 @@ import BeeSvg from "@/utils/BeeSvg";
 import React, { useContext, useEffect } from "react";
 
 const Timer = () => {
-  const { seconds, setSeconds, startGame } = useContext(GameContext);
+  const { seconds, setSeconds, startGame, setStartGame } =
+    useContext(GameContext);
 
   useEffect(() => {
     if (seconds > 0 && startGame) {
@@ -13,7 +14,11 @@ const Timer = () => {
       }, 1000);
       return () => clearTimeout(timerId);
     }
-  }, [seconds]);
+    if (seconds <= 0) {
+      setStartGame(false);
+      console.log(startGame);
+    }
+  }, [seconds, startGame]);
 
   const percentage = (seconds / 60) * 100;
 

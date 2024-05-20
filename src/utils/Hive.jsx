@@ -1,21 +1,22 @@
 import { GameContext } from "@/context/GameContext";
+import { Input } from "postcss";
 import React, { useContext, useEffect } from "react";
 
 const Hive = ({ hiveName, letter }) => {
-  const { setInput } = useContext(GameContext);
+  const { input, setInput, startGame } = useContext(GameContext);
 
-  const handleClick = (e) => {
-    setInput(e.target.value);
+  const handleClick = (tarLetter) => () => {
+    setInput((prevInput) => prevInput + tarLetter);
   };
 
   return (
-    <div
+    <button
       className={`hexagon ${hiveName} cursor-pointer  ml-2 font-bold text-xl `}
-      onClick={handleClick}
-      value={"a"}
+      onClick={handleClick(letter)}
+      disabled={!startGame}
     >
       {letter}
-    </div>
+    </button>
   );
 };
 

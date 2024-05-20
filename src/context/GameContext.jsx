@@ -5,21 +5,11 @@ export const GameContext = createContext();
 
 const GameContextProvider = ({ children }) => {
   //Found Words
-  const [foundWords, setFoundWords] = useState([
-    "Test",
-    "Merhaba",
-    "Deneme",
-    "Test",
-    "Merhaba",
-    "Deneme",
-    "Test",
-    "Merhaba",
-    "Deneme",
-  ]);
+  const [foundWords, setFoundWords] = useState([]);
 
   //ProgressBar states.
-  const [minValue, setMinValue] = useState(105);
-  const [maxValue, setMaxValue] = useState(250);
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(0);
   //Timer state.
   const [seconds, setSeconds] = useState(60);
   const [startGame, setStartGame] = useState(false);
@@ -51,6 +41,9 @@ const GameContextProvider = ({ children }) => {
         setCount,
         correctAnswers,
         setCorrectAnswers,
+        startGame,
+        setStartGame,
+        setSeconds,
       }}
     >
       <div>{children}</div>
