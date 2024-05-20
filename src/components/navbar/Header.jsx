@@ -21,17 +21,17 @@ const Header = ({ params }) => {
           <LanguageSwitcher params={params} />
         </div>
         <div className="flex gap-4 items-center mr-4">
-          <GrTrophy size={"30px"} className="cursor-pointer text-[#FAFAFA]" />
+          {/* <GrTrophy size={"30px"} className="cursor-pointer text-[#FAFAFA]" />
 
           <FaRankingStar
             size={"35px"}
             className="cursor-pointer text-[#FAFAFA]"
-          />
+          /> */}
 
-          <IoSettingsOutline
+          {/* <IoSettingsOutline
             size={"35px"}
             className="cursor-pointer text-[#FAFAFA]"
-          />
+          /> */}
           <FaRegQuestionCircle
             size={"34px"}
             className="cursor-pointer text-[#FAFAFA]"

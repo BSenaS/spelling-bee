@@ -23,6 +23,8 @@ const GameElements = ({ params }) => {
     foundWords,
     setMinValue,
     constantsDic,
+    errorMsg,
+    setErrorMsg,
   } = useContext(GameContext);
 
   //data.en
@@ -51,6 +53,7 @@ const GameElements = ({ params }) => {
     setStartGame(false);
     setFoundWords([]);
     setMinValue(0);
+    setErrorMsg("");
   };
 
   const handleStart = () => {
@@ -71,26 +74,30 @@ const GameElements = ({ params }) => {
 
     if (input.length < 4) {
       console.log("Kelime 4 harften küçük olamaz.");
+      setErrorMsg(d.fourLetter);
       setInput("");
     } else if (input.length > 15) {
       console.log("Kelime 15 harften büyük olamaz.");
+      setErrorMsg(d.fifteenLetter);
       setInput("");
     } else if (wordExist) {
+      setErrorMsg(d.letterExist);
       console.log("Bu kelime daha önce girildi");
       setInput("");
     } else if (!middleLetterExist) {
+      setErrorMsg(d.middleLetterExist);
       console.log("Kelime orta harfi içermiyor.");
       setInput("");
     } else if (foundWord) {
       //Kelime puanı hesaplama
       const wordScore = input.split("").length;
       setMinValue((prevMinValue) => prevMinValue + (wordScore - 3));
-      console.log("Kelimenizin puanı ->", wordScore);
-      console.log("tebrikler kelimeyi buldunuz!", input);
+      setErrorMsg(d.correctAnswer);
       setSeconds((prevSec) => prevSec + 15);
       setFoundWords((prevFoundWords) => [...prevFoundWords, input]);
       setInput("");
     } else {
+      setErrorMsg(d.falseAnswer);
       console.log("Kelime Bulunamadı");
       setInput("");
     }
@@ -100,8 +107,6 @@ const GameElements = ({ params }) => {
     hiveName: `hive${index + 1}`,
     letter: letter,
   }));
-
-  const [puan, setPuan] = useState(0);
 
   useEffect(() => {
     setMaxValue(currentAnswers.totalPoint);
@@ -116,6 +121,10 @@ const GameElements = ({ params }) => {
       <ProgressBar params={params} />
       <FoundWordList params={params} />
       <Timer params={params} />
+      {/* Error Messages */}
+
+      <span className="font-bold text-[#FAFAFAFA] h-[25px]">{errorMsg}</span>
+
       <form onSubmit={handleSubmitBtn}>
         <div>
           <input

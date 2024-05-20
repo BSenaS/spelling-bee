@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const LanguageSwitcher = ({ params }) => {
-  // {params == "en" : }
   return (
     <div>
       {params === "en" ? (

@@ -16,6 +16,7 @@ export const constants = {
     deleteBtn: "Delete",
     submitBtn: "Submit",
     startBtn: "Start!",
+    timeFinished: "Time Finished!",
   },
   tr: {
     foundedWords: "Bulunan Kelimeler",
@@ -34,5 +35,6 @@ export const constants = {
     deleteBtn: "Sil",
     submitBtn: "Gönder",
     startBtn: "Başlat!",
+    timeFinished: "Zaman Doldu!",
   },
 };

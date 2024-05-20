@@ -4,8 +4,15 @@ import BeeSvg from "@/utils/BeeSvg";
 import React, { useContext, useEffect } from "react";
 
 const Timer = ({ params }) => {
-  const { seconds, setSeconds, startGame, setStartGame, constantsDic } =
-    useContext(GameContext);
+  const {
+    seconds,
+    setSeconds,
+    startGame,
+    setStartGame,
+    constantsDic,
+    errorMsg,
+    setErrorMsg,
+  } = useContext(GameContext);
   const d = constantsDic[params];
 
   useEffect(() => {
@@ -17,7 +24,7 @@ const Timer = ({ params }) => {
     }
     if (seconds <= 0) {
       setStartGame(false);
-      console.log(startGame);
+      setErrorMsg(d.timeFinished);
     }
   }, [seconds, startGame]);
 
