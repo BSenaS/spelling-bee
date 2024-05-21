@@ -117,6 +117,7 @@ const GameElements = ({ params }) => {
   }, [count]);
 
   useEffect(() => {
+    setCount(0);
     setInput("");
     setSeconds(60);
     setStartGame(false);
